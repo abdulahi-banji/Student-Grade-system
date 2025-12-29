@@ -13,7 +13,7 @@ def load_data(filename):
 
 def save_data(filename, data):
     """
-    Save data (dict) to JSON file with indentation.
+    Save datato json with indentation for readability
     """
     with open(filename, "w") as file:
         json.dump(data, file, indent=4)

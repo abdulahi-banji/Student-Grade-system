@@ -1,6 +1,6 @@
 class Student:
     def __init__(self, name):
-        self.name = name.strip().title()  # Normalize capitalization
+        self.name = name.strip().title()  # Capitizing each letter
         self.grades = []
 
     def add_grade(self, grade):

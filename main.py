@@ -3,7 +3,7 @@ from students import Student
 
 FILENAME = "grades.json"
 
-# Load existing data
+# Load existing data f5om the json file 
 raw_data = load_data(FILENAME)
 students = {}
 for name, grades in raw_data.items():
@@ -11,7 +11,7 @@ for name, grades in raw_data.items():
     s.grades = grades
     students[s.name] = s
 
-# --- Menu Functions ---
+# --- The Menu Functions ---
 
 def show_menu():
     print("\n--- Student Grade Management System ---")
@@ -31,15 +31,15 @@ def add_student():
         print("Student already exists.")
     else:
         students[name] = Student(name)
-        print(f"{name} added successfully.")
+        print(f"\n{name} added successfully.")
 
 def list_students():
     if not students:
         print("No students available.")
     else:
-        print("Students:")
+        print("\nStudents:")
         for name in students:
-            print(f"- {name}")
+            print(f"- {name}.z")
 
 def search_student():
     name = input("Enter student full name: ").strip().title()
@@ -106,20 +106,21 @@ def generate_report():
 
 def view_statistics():
     if not students:
-        print("No students available.")
+        print("\n No students available.")
         return
     for student in students.values():
         stats = student.statistics()
         if stats:
-            print(f"{student.name} → Avg: {stats['average']:.2f}, Min: {stats['min']}, Max: {stats['max']}")
+            print(f"\n{student.name} → Avg: {stats['average']:.2f}, Min: {stats['min']}, Max: {stats['max']}")
         else:
-            print(f"{student.name} → No grades yet.")
+            print(f"\n{student.name} → No grades yet.")
 
 def save_and_exit():
     data_to_save = {s.name: s.grades for s in students.values()}
     save_data(FILENAME, data_to_save)
-    print("Data saved. Goodbye!")
+    print("\nData saved. Goodbye!")
     exit()
+
 
 # --- Main Loop ---
 

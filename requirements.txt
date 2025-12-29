@@ -1,0 +1,8 @@
+# Project Requirements
+
+## Python Version
+- Python 3.10 or higher
+
+## Libraries / Dependencies
+This project uses only **Python standard libraries**, so no additional installations are required:
+
