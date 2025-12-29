@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 class Student:
     def __init__(self, name):
         self.name = name.strip().title()  # Normalize capitalization
@@ -17,3 +18,6 @@ class Student:
             return None
         avg = sum(self.grades) / len(self.grades)
         return {"average": avg, "min": min(self.grades), "max": max(self.grades)}
+=======
+
+>>>>>>> 6308dbbebdf723d5891d2334260724f31c70bb5c
