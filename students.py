@@ -1,0 +1,19 @@
+class Student:
+    def __init__(self, name):
+        self.name = name.strip().title()  # Normalize capitalization
+        self.grades = []
+
+    def add_grade(self, grade):
+        if 0 <= grade <= 100:
+            self.grades.append(grade)
+            return True
+        return False
+
+    def update_name(self, new_name):
+        self.name = new_name.strip().title()
+
+    def statistics(self):
+        if not self.grades:
+            return None
+        avg = sum(self.grades) / len(self.grades)
+        return {"average": avg, "min": min(self.grades), "max": max(self.grades)}
